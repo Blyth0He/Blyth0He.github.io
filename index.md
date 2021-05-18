@@ -8,6 +8,46 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
+
+####My Notes
+```
+1.先用Telnet  改密码   
+命今：passwd root
+输二次就修改成功了。
+
+2.再用winscp工具进路由修改/etc/config/network修改如下：
+
+
+config 'interface' 'loopback'
+        option 'ifname' 'lo'
+        option 'proto' 'static'
+        option 'ipaddr' '127.0.0.1'
+        option 'netmask' '255.0.0.0'
+
+config 'interface' 'lan'
+        option 'ifname' 'eth0'
+        option 'type' 'bridge'
+        option 'proto' 'static'
+        option 'ipaddr' '192.168.1.1'
+        option 'netmask' '255.255.255.0'
+
+config 'interface' 'wan'
+        option 'ifname' 'eth1'
+        option 'proto' 'pppoe'
+        option 'username' '你的ADSL账号'
+        option 'password' '密码'
+
+config 'switch' 'eth0'
+        option 'enable_vlan' '1'
+
+config 'switch_vlan'
+        option 'device' 'eth0'
+        option 'vlan' '1'
+        option 'ports' '0 1 2 3 4'
+
+或接上二级路由上或其它方法。总之让这个路由能上网！！！！！！
+```
+
 ```markdown
 Syntax highlighted code block
 
