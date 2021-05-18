@@ -9,7 +9,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 
-####My Notes
+#### My Notes
 ```
 1.先用Telnet  改密码   
 命今：passwd root
