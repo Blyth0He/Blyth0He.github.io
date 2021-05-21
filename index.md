@@ -1,77 +1,13 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/Blyth0He/blyth.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-
-#### My Notes
 ```
-1.先用Telnet  改密码   
-命今：passwd root
-输二次就修改成功了。
+*DIR882刷openwrt记录*
 
-2.再用winscp工具进路由修改/etc/config/network修改如下：
+首先刷回原厂固件
 
+1.上电时按住WPS键10秒进入breed界面，点击固件更新，点击编程器固件，文件选择DIR-878_A1_DDWRT_FULL.bin, 更新
+2.更新完成之后重启，再次进入breed界面，继续点击固件更新，选择更新bootloader，选择文件mtd0-u-boot.bin, 重启
+3.断电后按RESET键，上电10秒松开，进入DLINK恢复界面，选择```DIR878A1_FW101B04.bin, 刷完之后重启
+4.断电后按RESET键，上电10秒松开，进入DLINK恢复界面, 选择DIR882A1_Middle_FW_Unencrypt.bin, 更新重启
 
-config 'interface' 'loopback'
-        option 'ifname' 'lo'
-        option 'proto' 'static'
-        option 'ipaddr' '127.0.0.1'
-        option 'netmask' '255.0.0.0'
-
-config 'interface' 'lan'
-        option 'ifname' 'eth0'
-        option 'type' 'bridge'
-        option 'proto' 'static'
-        option 'ipaddr' '192.168.1.1'
-        option 'netmask' '255.255.255.0'
-
-config 'interface' 'wan'
-        option 'ifname' 'eth1'
-        option 'proto' 'pppoe'
-        option 'username' '你的ADSL账号'
-        option 'password' '密码'
-
-config 'switch' 'eth0'
-        option 'enable_vlan' '1'
-
-config 'switch_vlan'
-        option 'device' 'eth0'
-        option 'vlan' '1'
-        option 'ports' '0 1 2 3 4'
-
-或接上二级路由上或其它方法。总之让这个路由能上网！！！！！！
+刷openwrt
+5.断电后按RESET键，上电10秒松开，进入DLINK恢复界面, 选择openwrt-ramips-mt7621-dlink_dir-882-a1-squashfs-factory.bin, 更新重启
 ```
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Blyth0He/blyth.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
